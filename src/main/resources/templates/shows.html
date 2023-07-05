@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Returned Shows</title>
+</head>
+
+<body>
+    <table>
+        <tr th:each="show : ${showsList}">
+            <img th:src="${show.image.medium}" alt="">
+            <td th:text="*{show.name}">
+            </td>
+            <td th:text="*{show.type}"></td>
+            <td th:text="*{show.language}"></td>
+            <td th:text="*{show.schedule.time}"></td>
+            <td th:text="${show.genres.get(0)}"></td>
+        </tr>
+    </table>
+    <form action="/" method="get">
+        <button type="submit">Back</button>
+    </form>
+</body>
+
+</html>
